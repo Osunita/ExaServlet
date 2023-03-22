@@ -9,8 +9,10 @@
 </head>
 <body>
 <h1>Dueños</h1>
-<c:forEach items="${nombres}" var="nombre">
-	<div>${nombre}</div>
-</c:forEach>
+	<ul>
+        <c:forEach items="${owners}" var="owner">
+            <li>${owner.nombre} (${owner.dni})</li>
+        </c:forEach>
+    </ul>
 </body> 
 </html>
