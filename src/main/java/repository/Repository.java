@@ -32,7 +32,7 @@ public class Repository {
 			while (resultSet.next()) {
 				userInDatabase = new duenos();
 				userInDatabase.setNombreDueño(resultSet.getString(1));
-				userInDatabase.setMascota(resultSet.getInt(2));
+				userInDatabase.setDni(resultSet.getString(2));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -26,5 +26,7 @@ public class duenos {
 		this.dni = dni;
 	}
 
+	
+	
 
 }

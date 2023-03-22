@@ -1,3 +1,5 @@
+<%@ page import="java.util.List" %>
+<%@ page import="model.duenos" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -9,10 +11,24 @@
 </head>
 <body>
 <h1>Dueños</h1>
-	<ul>
-        <c:forEach items="${owners}" var="owner">
-            <li>${owner.nombre} (${owner.dni})</li>
-        </c:forEach>
-    </ul>
+<%
+    List<duenos> owners = new duenos().getOwners();
+%>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>DNI</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (duenos owner : owners) { %>
+            <tr>
+                <td><%= owner.getNombreDueño() %></td>
+                <td><%= owner.getDni() %></td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
 </body> 
 </html>
